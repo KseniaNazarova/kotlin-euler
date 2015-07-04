@@ -4,15 +4,12 @@ import euler.*
 
 import java.io.File
 import java.math.BigInteger
-import java.util.Scanner
+import java.util.*
 
 fun range(start: Int, increment: Int = 1): Sequence<Int> = generateSequence(start) { it + increment }
 
-fun primes(): Sequence<Long> = generateSequence(2L) { previous ->
-  var number = previous + if (previous.isEven()) 1 else 2
-  while (!number.isPrime()) number += 2
-  number
-}
+
+inline fun primes(): Sequence<Long> = Primes.sequence()
 
 data class FibonacciTerm(val index: Int, val value: BigInteger)
 
