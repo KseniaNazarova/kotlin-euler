@@ -1,4 +1,6 @@
-fun main(args: Array<String>){
+package euler.probem0050
+
+fun problem0050(): Int{
     val limit = 1000000
     val primeList = (0..limit).filter { isPrime(it) }
 
@@ -17,7 +19,8 @@ fun main(args: Array<String>){
             }
         }
     }
-    println("$primeSum can be written as the sum of the most consecutive primes")
+    println("Problem 50: $primeSum can be written as the sum of the most consecutive primes")
+    return primeSum
 }
 
 fun isPrime(n: Int) = n > 1 && (2..Math.sqrt(n.toDouble()).toInt()).find { n % it == 0 } == null
